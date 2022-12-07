@@ -16,10 +16,12 @@ class Socket {
 
             socket.on('solicitud-sala', async (args) => {
 
+               
+
                 const { idSala, nameUser, idUser } = args;
 
                 let res = await findSala(idSala);
-
+                
                 if (!res.ok) {
                     socket.emit('respuesta-solicitud', {
                         active: false,
